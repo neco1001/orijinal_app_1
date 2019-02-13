@@ -1,2 +1,11 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "トップページ") %>
+<div class="center">
+  <%= image_tag("Homeページ画像.png", alt: "Homeページ画像", width: "50%") %>
+  <h1>写真管理アプリ</h1>
+
+  <h2>
+    家族や友人と大切な写真をWeb上で共有・管理が可能
+  </h2>
+
+  <%= link_to "アカウント作成", '#', class: "btn btn-lg btn-primary" %>
+</div>
