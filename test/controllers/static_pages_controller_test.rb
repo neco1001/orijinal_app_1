@@ -4,12 +4,12 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get root" do
     get root_url
     assert_response :success
-    assert_select "title", "トップページ | 写真管理"
+    assert_select "title", full_title
   end
 
   test "should get about" do
-    get static_pages_about_url
+    get about_url
     assert_response :success
-    assert_select "title", "写真管理について | 写真管理"
+    assert_select "title", full_title("写真管理について")
   end
 end
