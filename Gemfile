@@ -39,3 +39,4 @@ end
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'rails-i18n'
