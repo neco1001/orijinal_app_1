@@ -40,3 +40,4 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'rails-i18n'
+gem 'bcrypt',         '3.1.12'
