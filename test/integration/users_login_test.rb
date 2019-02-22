@@ -28,6 +28,8 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", user_path(@user)
     delete destroy_user_session_path
     assert_redirected_to root_url
+    # 2番目のウィンドウでログアウトをクリックするユーザーをシミュレートする
+    delete destroy_user_session_path
     follow_redirect!
     assert_select "a[href=?]", new_user_session_path
     assert_select "a[href=?]", destroy_user_session_path, count: 0
