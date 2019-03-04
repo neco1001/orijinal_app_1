@@ -35,6 +35,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'fog'
 end
 
 gem 'bootstrap-sass'
@@ -44,3 +45,5 @@ gem 'bcrypt',         '3.1.12'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'carrierwave'
+gem 'mini_magick'

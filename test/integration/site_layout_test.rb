@@ -25,6 +25,5 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", user_path(@user)
     assert_select "a[href=?]", edit_user_registration_path
     assert_select "a[href=?]", destroy_user_session_path
-    assert_select "a[href=?]", new_user_registration_path
   end
 end
