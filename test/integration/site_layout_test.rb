@@ -9,7 +9,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   test "layout links when not logged in" do
     get root_path
     assert_template 'static_pages/home'
-    assert_select "a[href=?]", root_path, count: 2
+    assert_select "a[href=?]", root_path
     assert_select "a[href=?]", about_path
     assert_select "a[href=?]", new_user_session_path
     assert_select "a[href=?]", new_user_registration_path
@@ -19,7 +19,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     sign_in users(:michael)
     get root_path
     assert_template 'static_pages/home'
-    assert_select "a[href=?]", root_path, count: 2
+    assert_select "a[href=?]", root_path
     assert_select "a[href=?]", about_path
     assert_select "a[href=?]", users_path
     assert_select "a[href=?]", user_path(@user)
