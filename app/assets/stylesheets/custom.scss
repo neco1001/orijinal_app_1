@@ -64,20 +64,15 @@ p {
 
 /* header */
 
-#icon {
-  float: left;
-  margin-right: 15px;
-  padding-top: 9px;
-}
+// #icon {
+  // margin-right: 15px;
+// }
 
 #logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
+  // margin-right: 10px;
+  font-size: 1.2em;
   color: white;
-  padding-top: 9px;
   &:hover {
-    color: white;
     text-decoration: none;
   }
 }
