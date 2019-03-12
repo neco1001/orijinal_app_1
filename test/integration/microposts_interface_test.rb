@@ -11,7 +11,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     get root_path
     assert_select 'div.pagination'
     assert_select 'input[type=file]'
-    # 無効な送信
+    # 無効な送信(写真が未選択)
     assert_no_difference 'Micropost.count' do
       post microposts_path, params: { micropost: { content: "" } }
     end
