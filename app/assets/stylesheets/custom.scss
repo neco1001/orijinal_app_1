@@ -273,6 +273,10 @@ input {
       padding: 5px 0;
     }
   }
+  .like, .likes_count {
+    display: block;
+    margin-left: 60px;
+  }
   .timestamp {
     color: $gray-light;
     display: block;

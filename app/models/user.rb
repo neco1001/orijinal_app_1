@@ -8,6 +8,7 @@ class User < ApplicationRecord
                                  dependent:   :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :likes, dependent: :destroy
   validates :name, presence: true, length: { maximum: 50 }
 
   # Include default devise modules. Others available are:
@@ -46,5 +47,10 @@ class User < ApplicationRecord
   # 現在のユーザーがフォローしてたらtrueを返す
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  # 現在のユーザーがいいねしてたらオブジェクトを返す
+  def liked(micropost)
+    likes.find_by(micropost_id: micropost.id)
   end
 end

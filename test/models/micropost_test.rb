@@ -4,7 +4,7 @@ class MicropostTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:michael)
-    picture = fixture_file_upload('test/fixtures/カメラアイコン.png', 'image/png')
+    picture = fixture_file_upload('test/fixtures/HomePage.png', 'image/png')
     @micropost = @user.microposts.build(picture: picture)
   end
 
