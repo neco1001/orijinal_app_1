@@ -1,23 +1,22 @@
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="content">
-    <%= micropost.content %>
+  <div class="picture">
     <%= image_tag micropost.picture.url if micropost.picture? %>
-  </span>
+  </div>
 
   <!--　いいね機能  -->
   <span class="like">
     <% if like = current_user.liked(micropost) %>
-      <%= link_to "いいね！を取り消す", micropost_like_path(micropost, like.id), method: :delete %>
+      <%= link_to "いいね！を取り消す", micropost_like_path(micropost, like.id), method: :delete %><br />
     <% else %>
-      <%= link_to "いいね！", micropost_likes_path(micropost), method: :post %>
+      <%= link_to "いいね！", micropost_likes_path(micropost), method: :post %><br />
     <% end %>
+    いいね！<%= micropost.likes_count %>件
   </span>
 
-  <!--　いいねカウント  -->
-  <span class="likes_count">
-    いいね数：<%= micropost.likes_count %>
+  <span class="content">
+    <%= "#{micropost.user.name} #{micropost.content}" if micropost.content? %>
   </span>
 
   <span class="timestamp">

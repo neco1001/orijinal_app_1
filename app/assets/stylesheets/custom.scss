@@ -15,6 +15,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 50px;
+  background-color: #F4F5F7;
 }
 
 section {
@@ -118,10 +119,10 @@ footer {
 
 aside {
   section.user_info {
-    margin-top: 20px;
+    margin-top: 50px;
   }
   section {
-    padding: 10px 0;
+    padding: 10px 0 0 50px;
     margin-top: 20px;
     &:first-child {
       border: 0;
@@ -145,6 +146,7 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .gravatar_edit {
@@ -154,7 +156,7 @@ aside {
 .stats {
   overflow: auto;
   margin-top: 0;
-  padding: 0;
+  // padding: 0;
   a {
     float: left;
     padding: 0 10px;
@@ -253,40 +255,48 @@ input {
 }
 
 /* microposts */
+li[id^="micropost-"] {
+  background-color: white;
+  margin: 50px 0;
+  border: 1px solid #bbb;
+  width: 602px;
+}
 
 .microposts {
   list-style: none;
-  padding: 0;
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+  }
+  .gravatar {
+    float: left;
+    margin-left: 20px;
+    border-radius: 50%;
   }
   .user {
     margin-top: 5em;
     padding-top: 0;
-  }
-  .content {
-    display: block;
-    margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
+    a{
+      color: black;
     }
   }
-  .like, .likes_count {
+  .picture {
+    margin-top: 40px;
+  }
+  .like{
     display: block;
-    margin-left: 60px;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  .content{
+    display: block;
+    margin-left: 20px;
   }
   .timestamp {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
+    margin-left: 20px;
   }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
+
 }
 
 aside {
@@ -296,6 +306,7 @@ aside {
     }
     #thumbnail{
       height: 200px;
+      margin-top: 3px;
       display: none;
     }
   }
