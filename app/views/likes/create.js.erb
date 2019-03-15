@@ -1,0 +1,3 @@
+$("#micropost-<%= @micropost.id %> .like").html("<%= escape_javascript(link_to "いいね！を取り消す",
+ micropost_like_path(@micropost, @like), method: :delete, remote: true) %>")
+$("#micropost-<%= @micropost.id %> .likes_count").html("いいね！<%= @micropost.reload.likes_count %>件")

@@ -8,10 +8,14 @@
   <!--　いいね機能  -->
   <span class="like">
     <% if like = current_user.liked(micropost) %>
-      <%= link_to "いいね！を取り消す", micropost_like_path(micropost, like.id), method: :delete %><br />
+      <%= link_to "いいね！を取り消す", micropost_like_path(micropost, like), method: :delete, remote: true %>
     <% else %>
-      <%= link_to "いいね！", micropost_likes_path(micropost), method: :post %><br />
+      <%= link_to "いいね！", micropost_likes_path(micropost), method: :post, remote: true %>
     <% end %>
+  </span>
+
+  <!--　いいねカウント  -->
+  <span class="likes_count">
     いいね！<%= micropost.likes_count %>件
   </span>
 

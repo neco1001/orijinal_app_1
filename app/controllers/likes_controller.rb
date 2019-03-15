@@ -2,10 +2,13 @@ class LikesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
-    @like = Like.new(user_id: current_user.id, micropost_id: params[:micropost_id])
+    @micropost = Micropost.find(params[:micropost_id])
+    @like = current_user.likes.build(micropost_id: params[:micropost_id])
     if @like.save
-      flash[:success] = "いいね！しました。"
-      redirect_to root_path
+      respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js
+      end
     else
       flash[:success] = "失敗です"
       redirect_to root_path
@@ -13,9 +16,11 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @like = Like.find_by(id: params[:id])
-    @like.destroy
-    flash[:success] = "いいね！を取り消しました。"
-    redirect_to root_path
+    @micropost = Micropost.find(params[:micropost_id])
+    Like.find_by(id: params[:id]).destroy
+    respond_to do |format|
+      format.html {redirect_to root_path}
+      format.js
+    end
   end
 end
