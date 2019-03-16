@@ -1,5 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+@keyframes heart-anime{
+0% { transform: scale(1); }
+60% { transform: scale(1); }
+70% { transform: scale(1.3); }
+80% { transform: scale(1); }
+90% { transform: scale(1.3); }
+100% { transform: scale(1); }
+}
 
 /* mixins, variables, etc. */
 
@@ -284,16 +294,35 @@ li[id^="micropost-"] {
   }
   .like{
     display: block;
-    margin-top: 5px;
+    float: left;
+    margin-top: 15px;
     margin-left: 20px;
+    .fa-heart-o{
+      color: $gray-light;
+    }
+    .fa-heart {
+      color: #FF5252;
+      // animation: heart-anime 3s reverse;
+    }
+    .heart-anime {
+      color: #FF5252;
+      animation: heart-anime 3s reverse;
+    }
   }
-  .likes_count, .content{
+  .likes_count{
     display: block;
+    margin-top: 15px;
+    margin-left: 45px;
+  }
+  .content{
+    display: block;
+    margin-top: 10px;
     margin-left: 20px;
   }
   .timestamp {
     color: $gray-light;
     display: block;
+    margin-top: 10px;
     margin-left: 20px;
   }
 
