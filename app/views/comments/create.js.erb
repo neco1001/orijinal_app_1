@@ -1,0 +1,2 @@
+$("#micropost-<%= @micropost.id %> .comments_disp").html("<%= escape_javascript(render @micropost.reload.comments) %>");
+$("#micropost-<%= @micropost.id %> .comments_count").html("コメント <%= @micropost.reload.comments_count %> 件");

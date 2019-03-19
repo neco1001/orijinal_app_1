@@ -26,6 +26,7 @@ $gray-medium-light: #eaeaea;
 body {
   padding-top: 50px;
   background-color: #F4F5F7;
+  font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 section {
@@ -33,7 +34,9 @@ section {
 }
 
 textarea {
-  resize: vertical;
+  // resize: vertical;
+  resize: none;
+  outline: none;
 }
 
 .center {
@@ -275,7 +278,7 @@ li[id^="micropost-"] {
 .microposts {
   list-style: none;
   li {
-    padding: 10px 0;
+    padding-top: 10px;
   }
   .gravatar {
     float: left;
@@ -289,43 +292,77 @@ li[id^="micropost-"] {
       color: black;
     }
   }
-  .picture {
-    margin-top: 40px;
-  }
-  .like{
-    display: block;
-    float: left;
-    margin-top: 15px;
-    margin-left: 20px;
-    .fa-heart-o{
-      color: $gray-light;
-    }
-    .fa-heart {
-      color: #FF5252;
-      // animation: heart-anime 3s reverse;
-    }
-    .heart-anime {
-      color: #FF5252;
-      animation: heart-anime 3s reverse;
-    }
-  }
-  .likes_count{
-    display: block;
-    margin-top: 15px;
-    margin-left: 45px;
-  }
   .content{
     display: block;
-    margin-top: 10px;
+    margin-top: 40px;
     margin-left: 20px;
+  }
+  .picture {
+    margin-top: 10px;
+  }
+  .like-comment{
+    padding-top: 15px;
+    padding-left: 20px;
+    .like_icon{
+      display: block;
+      float: left;
+      .fa-heart-o{
+        color: $gray-light;
+      }
+      .fa-heart {
+        color: #FF5252;
+      }
+      .heart-anime {
+        color: #FF5252;
+        animation: heart-anime 3s reverse;
+      }
+    }
+    .likes_count{
+      display: block;
+      font-weight: bolder;
+      float: left;
+      margin-top: 4px;
+      margin-left: 5px;
+    }
+    .comment_icon{
+      display: block;
+      float: left;
+      font-weight: bolder;
+      margin-left: 30px;
+      color: $gray-light;
+      margin-top: -3px;
+    }
+    .comments_count{
+      display: block;
+      float: left;
+      font-weight: bolder;
+      margin-top: 4px;
+      margin-left: 5px;
+    }
+  }
+  .comments_disp{
+    list-style: none;
+    margin-top: 35px;
+    padding-left: 20px;
+    li{
+      padding: 3px 0;
+      span{
+        font-weight: bolder;
+      }
+    }
   }
   .timestamp {
     color: $gray-light;
     display: block;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 20px;
   }
-
+  #comment_content{
+    margin-top: 5px;
+    padding-left: 20px;
+    border: 0;
+    border-top: 1px solid $gray-medium-light;
+  }
 }
 
 aside {
