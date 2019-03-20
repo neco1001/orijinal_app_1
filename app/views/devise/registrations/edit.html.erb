@@ -1,5 +1,5 @@
-<% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+<% provide(:title, "プロフィール更新") %>
+<h1>プロフィール更新</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -21,12 +21,12 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+        <%= f.label :password %>
         <% if @minimum_password_length %>
-          <br />
-          <em><%= @minimum_password_length %> characters minimum</em>
+          <em>(最小<%= @minimum_password_length %>文字)</em>
         <% end %>
+        <i>　※変更したくない場合は空白のままにしてください。</i><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
       </div>
 
       <div class="field">
@@ -35,27 +35,28 @@
       </div>
 
       <div class="field">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.label :current_password, '現在のパスワード'%> <i>　※更新するには現在のパスワードの入力が必要です。</i><br />
         <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Update", class: "btn btn-primary" %>
+        <%= f.submit "更新", class: "btn btn-primary" %>
       </div>
     <% end %>
 
     <div class="gravatar_edit">
-      <%= gravatar_for resource %>
-      <a href="http://gravatar.com/emails" target="_blank", rel="noopener">change</a>
+      <p>プロフィール画像の変更</p>
+      <%= link_to gravatar_for(resource), "http://gravatar.com/emails", target: "_blank", rel: "noopener" %>
       <div class="clear"></div>
     </div>
 
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-primary" %></p>
+    <div class="user_delete">
+      <p>アカウント削除</p>
+      <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-primary" %>
+    </div>
 
     <div class="links">
-      <%= link_to "Back", :back %>
+      <%= link_to "戻る", :back %>
     </div>
   </div>
 </div>

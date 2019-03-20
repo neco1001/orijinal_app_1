@@ -1,13 +1,13 @@
 ja:
   devise:
     confirmations:
-      confirmed: "アカウントが確認されました。ログインしています。"
+      confirmed: "アカウントが確認されました。"
       send_instructions: "アカウントの確認方法を数分以内にメールでご連絡します。"
       send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、アカウントの確認方法をメールでご連絡します。"
     failure:
       already_authenticated: "既にログインしています。"
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid email or password."
+      inactive: "あなたのアカウントはまだ有効になっていません。"
+      invalid: "メールアドレスまたはパスワードが無効です。"
       locked: "アカウントがロックされています。"
       last_attempt: "あなたのアカウントがロックされる前に、もう1つの試みを持っています。"
       not_found_in_database: "メールアドレスまたはパスワードが無効です。"
@@ -31,7 +31,7 @@ ja:
       updated: "パスワードを変更しました。"
       updated_not_active: "パスワードを変更しました。"
     registrations:
-      destroyed: "アカウントを削除しました。またのご利用をお待ちしております。"
+      destroyed: "アカウントを削除しました。"
       signed_up: "アカウント登録を受け付けました。"
       signed_up_but_inactive: "アカウントは登録されていますが、アクティブになっていないため利用できません。"
       signed_up_but_locked: "アカウントは登録されていますが、ロックされているため利用できません。"
@@ -53,5 +53,5 @@ ja:
       not_found: "は見つかりませんでした。"
       not_locked: "ロックされていません。"
       not_saved:
-        one: "エラーにより、この %{resource} を保存できません："
-        other: "%{count} 個のエラーにより、この %{resource} を保存できません："
+        one: "1つのエラーがあります。"
+        other: "%{count}つのエラーがあります。"

@@ -1,5 +1,5 @@
-<% provide(:title, 'Reset password') %>
-<h1>Reset password</h1>
+<% provide(:title, 'パスワードリセット') %>
+<h1>パスワードリセット</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -8,20 +8,20 @@
       <%= f.hidden_field :reset_password_token %>
 
       <div class="field">
-        <%= f.label :password, "New password" %><br />
+        <%= f.label :password, "新パスワード" %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+          <em>(最小<%= @minimum_password_length %>文字)</em><br />
         <% end %>
         <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'form-control' %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation, "Confirm new password" %><br />
+        <%= f.label :password_confirmation, "新パスワード確認" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Change my password", class: "btn btn-primary" %>
+        <%= f.submit "パスワード変更", class: "btn btn-primary" %>
       </div>
     <% end %>
 

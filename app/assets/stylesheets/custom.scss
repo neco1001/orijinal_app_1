@@ -24,7 +24,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 50px;
+  padding-top: 60px;
   background-color: #F4F5F7;
   font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
@@ -34,20 +34,24 @@ section {
 }
 
 textarea {
-  // resize: vertical;
   resize: none;
   outline: none;
 }
 
 .center {
   text-align: center;
-  img{
-    position: relative;
-    top: -20px;
-  }
+  margin: 0 -15px 0 -15px;
+  padding-right: 0;
+  position: fixed;
+  top: 50px;
   h1 {
     margin-top: 30px;
   }
+}
+
+.alert{
+  position: relative;
+  z-index: 1;
 }
 
 /* typography */
@@ -133,6 +137,9 @@ footer {
 aside {
   section.user_info {
     margin-top: 50px;
+    a{
+      color: #333333;
+    }
   }
   section {
     padding: 10px 0 0 50px;
@@ -163,7 +170,17 @@ aside {
 }
 
 .gravatar_edit {
-  margin-top: 15px;
+  margin-top: 30px;
+  p{
+    font-weight: bold;
+  }
+}
+
+.user_delete{
+  margin-top: 30px;
+  p{
+    font-weight: bold;
+  }
 }
 
 .stats {
@@ -227,16 +244,14 @@ input {
 
 .field_with_errors {
   @extend .has-error;
+   display: inline;
   .form-control {
     color: $state-danger-text;
   }
 }
 
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
+.checkbox-inline {
+  label {
     font-weight: normal;
   }
 }
@@ -289,7 +304,7 @@ li[id^="micropost-"] {
     margin-top: 5em;
     padding-top: 0;
     a{
-      color: black;
+      color: #333333;
     }
   }
   .content{

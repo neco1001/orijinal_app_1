@@ -41,7 +41,7 @@
   <span class="timestamp">
     <%= time_ago_in_words(micropost.created_at) %>前
     <% if micropost.user == current_user %>
-      <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
+      <%= link_to "投稿を削除", micropost, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </span>
 
@@ -49,7 +49,6 @@
   <span class="comment">
     <%= form_for(@comment, url: micropost_comments_path(micropost), remote: true) do |f| %>
       <%= f.text_area :content, placeholder: "コメントを追加" %>
-      <%= f.submit %>
     <% end %>
   </span>
 </li>
