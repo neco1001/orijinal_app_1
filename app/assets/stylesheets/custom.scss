@@ -270,6 +270,27 @@ input {
   line-height: 25px;
 }
 
+#link_or{
+  text-align: center;
+  color: gray;
+}
+
+.facebook{
+  color: #fff;
+  background-color: #3b5998;
+  width: 100%;
+  &:hover{
+    color: #fff;
+  }
+  a{
+    color: #fff;
+  }
+}
+
+.new-action{
+  margin-top: 25px;
+}
+
 /* Users index */
 
 .users {
