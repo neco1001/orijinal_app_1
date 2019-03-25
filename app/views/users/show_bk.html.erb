@@ -14,12 +14,9 @@
   <div class="col-md-8">
     <%= render 'follow_form' if user_signed_in? %>
     <% if @user.microposts.any? %>
-      <ol class="show-microposts">
-        <% @microposts.each do |micropost| %>
-          <li id="thumb-micropost-<%= micropost.id %>">
-            <%= image_tag micropost.picture.thumb.url if micropost.picture? %>
-          </li>
-        <% end %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
       </ol>
       <%= will_paginate @microposts %>
     <% end %>

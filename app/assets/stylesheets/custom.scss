@@ -11,6 +11,15 @@
 100% { transform: scale(1); }
 }
 
+.btn-default {
+    color: #333;
+    background-color: silver;
+    border-color: #ccc;
+    &:hover {
+      background-color: gray;
+    }
+}
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -186,7 +195,6 @@ aside {
 .stats {
   overflow: auto;
   margin-top: 0;
-  // padding: 0;
   a {
     float: left;
     padding: 0 10px;
@@ -304,17 +312,14 @@ input {
 }
 
 /* microposts */
-li[id^="micropost-"] {
-  background-color: white;
-  margin: 50px 0;
-  border: 1px solid #bbb;
-  width: 602px;
-}
-
 .microposts {
   list-style: none;
-  li {
+  li[id^="micropost-"] {
     padding-top: 10px;
+    background-color: white;
+    margin: 50px 0;
+    border: 1px solid #bbb;
+    width: 602px;
   }
   .gravatar {
     float: left;
@@ -400,6 +405,17 @@ li[id^="micropost-"] {
     border-top: 1px solid $gray-medium-light;
   }
 }
+
+/* users/show */
+.show-microposts{
+  list-style: none;
+  margin: 50px 0;
+  li{
+    display: inline-block;
+    margin: 3px 1px;
+  }
+}
+
 
 aside {
   span.picture {

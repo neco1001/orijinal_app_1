@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    # 後で削除
+    @comment = current_user.comments.build
   end
 
   def following
