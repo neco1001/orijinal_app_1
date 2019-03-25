@@ -311,6 +311,19 @@ input {
   }
 }
 
+.search_wrapper{
+  text-align: center;
+  .search_field{
+    background-image: url(search_icon.png);
+    background-repeat  : no-repeat;
+    background-size    : auto 80%;
+    background-position: 5px center;
+    width: 250px;
+    padding-left: 25px;
+    outline: none;
+  }
+}
+
 /* microposts */
 .microposts {
   list-style: none;

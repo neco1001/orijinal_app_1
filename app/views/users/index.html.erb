@@ -1,6 +1,12 @@
 <% provide(:title, 'ユーザー一覧') %>
 <h1>ユーザー一覧</h1>
 
+<%= form_tag(users_path, method: "get") do %>
+  <div class="search_wrapper">
+    <%= text_field_tag :key, "", placeholder: "名前を検索", class: "search_field" %>
+  </div>
+<% end %>
+
 <%= will_paginate %>
 
 <ul class="users">

@@ -8,9 +8,11 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+
   resources :microposts, only: [:create, :destroy] do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
+
   resources :relationships, only: [:create, :destroy]
 end

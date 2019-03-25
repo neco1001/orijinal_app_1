@@ -69,4 +69,13 @@ class User < ApplicationRecord
      end
    end
  end
+
+ # ユーザー検索機能
+ def self.search(key)
+   if key
+     where("name LIKE ?", "%#{key}%")
+   else
+     all
+   end
+ end
 end

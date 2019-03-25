@@ -2,14 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :following, :followers]
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.search(params[:key]).paginate(page: params[:page])
   end
 
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
-    # 後で削除
-    @comment = current_user.comments.build
   end
 
   def following
