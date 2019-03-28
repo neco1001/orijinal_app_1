@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_133727) do
+ActiveRecord::Schema.define(version: 2019_03_28_003336) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(version: 2019_03_20_133727) do
     t.string "picture"
     t.integer "likes_count", default: 0
     t.integer "comments_count", default: 0
+    t.string "address"
+    t.decimal "latitude", precision: 9, scale: 6
+    t.decimal "longitude", precision: 9, scale: 6
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end

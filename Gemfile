@@ -50,3 +50,6 @@ gem 'mini_magick'
 gem 'font-awesome-rails'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+gem 'geocoder'
+gem 'exifr'

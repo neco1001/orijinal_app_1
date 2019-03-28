@@ -4,6 +4,15 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
+    require 'exifr/jpeg'
+    exif = EXIFR::JPEG::new(@micropost.picture.file.file)
+    # Exifから位置情報(◯◯県◯◯市)を設定
+    if !exif.gps.nil?
+      @micropost.latitude = exif.gps.latitude
+      @micropost.longitude = exif.gps.longitude
+      results = Geocoder.search([@micropost.latitude, @micropost.longitude]).first
+      @micropost.address = "#{results.state} #{results.city}"
+    end
     if @micropost.save
       flash[:success] = "投稿しました。"
       redirect_to root_url
@@ -22,7 +31,7 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :picture)
+      params.require(:micropost).permit(:content, :picture, :address)
     end
 
     def correct_user

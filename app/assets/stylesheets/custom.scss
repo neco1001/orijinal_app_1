@@ -333,22 +333,32 @@ input {
     margin: 50px 0;
     border: 1px solid #bbb;
     width: 602px;
-  }
-  .gravatar {
-    float: left;
-    margin-left: 20px;
-    border-radius: 50%;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-    a{
-      color: #333333;
+    .micropost-header{
+      height: 60px;
+      .gravatar {
+        float: left;
+        margin-left: 20px;
+        border-radius: 50%;
+      }
+      .user {
+        display: inline-block;
+        margin-top: 8px;
+        a{
+          font-weight: bolder;
+          color: #333333;
+        }
+      }
+      .address {
+        display: inline-block;
+        a{
+          color: #333333;
+        }
+      }
     }
   }
   .content{
     display: block;
-    margin-top: 40px;
+    // margin-top: 20px;
     margin-left: 20px;
   }
   .picture {

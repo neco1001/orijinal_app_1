@@ -1,8 +1,11 @@
 <li id="micropost-<%= micropost.id %>">
-  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <div class="micropost-header">
+    <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+    <span class="user"><%= link_to micropost.user.name, micropost.user %></span><br />
+    <span class="address"><%= link_to micropost.address, '#' if micropost.address? %></span>
+  </div>
 
-  <span class="content clear">
+  <span class="content">
     <%= micropost.content if micropost.content? %>
   </span>
 

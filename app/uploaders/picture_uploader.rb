@@ -13,6 +13,15 @@ class PictureUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
+  # process :get_exif_info
+  #
+  # def get_exif_info
+  #   require 'exifr/jpeg'
+  #   exif = EXIFR::JPEG::new(self.file.file)
+  #   self.model.latitude = exif.gps.latitude
+  #   self.model.longitude = exif.gps.longitude
+  # end
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
