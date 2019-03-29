@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
 
   <span class="picture">
-    <%= f.label :picture, '写真を選択', class: "btn btn-primary" %><br />
+    <%= f.label :picture, fa_icon("camera lg") + " 写真を選択", class: "btn btn-primary" %><br />
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     <%= image_tag("", id:"thumbnail") %>
   </span>
@@ -10,6 +10,12 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "キャプションを書く" %>
   </div>
+
+  <div class="field">
+    <%= f.text_field :address, placeholder: "位置情報を追加" %>
+  </div>
+
+  <div id="address"></div>
 
   <%= f.submit "投稿", class: "btn btn-primary btn-post" %>
 <% end %>
@@ -34,8 +40,80 @@
       reader.onload = function() {
         $('#thumbnail').attr('src', reader.result );
         $('#thumbnail').show();
+        $('#micropost_address').show();
         $('.btn-post').show();
       }
+
+      // アップロードファイルからExif情報を抜出す。
+      $(this).fileExif(function(exif) {
+        if (!exif) {
+          console.log("exif情報なし");
+          return;
+        }
+        if (!exif.GPSLatitude) {
+          console.log("GPS情報なし");
+          return;
+        }
+        var lat = exif.GPSLatitude[0]  + (exif.GPSLatitude[1] / 60)  + (exif.GPSLatitude[2] / 3600);
+        var lng = exif.GPSLongitude[0] + (exif.GPSLongitude[1] / 60) + (exif.GPSLongitude[2] / 3600);
+
+        if( navigator.geolocation ){// 現在位置を取得できる場合の処理
+          // 現在位置を取得する
+          navigator.geolocation.getCurrentPosition( success, error, option);
+          /*現在位置が取得できた時に実行*/
+          function success(position){
+            var data = position.coords;
+            // 必要な緯度経度だけ取得
+            // var lat = data.latitude;
+            // var lng = data.longitude;
+
+            //Google Mapsで住所を取得
+            var geocoder = new google.maps.Geocoder();
+            latlng = new google.maps.LatLng(lat, lng);
+            geocoder.geocode({'latLng': latlng}, function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                console.log(results[0].address_components);
+
+                // ジオコーディング結果を用いた処理
+                var geoCnt = results[0].address_components.length;
+                var prefName = "";
+                var cityName = "";
+                for (var i = 0; i < geoCnt; i++) {
+                  if (results[0].address_components[i].types[0] === "administrative_area_level_1") {
+                    prefName = results[0].address_components[i].long_name;
+                  } else if (results[0].address_components[i].types[0] === "locality") {
+                    cityName = results[0].address_components[i].long_name;
+                  }
+                }
+                document.getElementById('micropost_address').value = prefName + cityName;
+              }
+              else {
+                alert("エラー" + status);
+              }
+            });
+          }
+          /*現在位置の取得に失敗した時に実行*/
+          function error(error){
+            var errorMessage = {
+              0: "原因不明のエラーが発生しました。",
+              1: "位置情報が許可されませんでした。",
+              2: "位置情報が取得できませんでした。",
+              3: "タイムアウトしました。",
+            } ;
+            //とりあえずalert
+            alert( errorMessage[error.code]);
+          }
+          // オプション(省略可)
+          var option = {
+            "enableHighAccuracy": false,
+            "timeout": 100 ,
+            "maximumAge": 100 ,
+          } ;
+        } else {// 現在位置を取得できない場合の処理
+          //とりあえずalert
+          alert("あなたの端末では、現在位置を取得できません。");
+        }
+      });
     }
   });
 </script>
