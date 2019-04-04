@@ -4,18 +4,427 @@
   <span class="picture">
     <%= f.label :picture, fa_icon("camera lg") + " 写真を選択", class: "btn btn-primary" %><br />
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-    <%= image_tag("", id:"thumbnail") %>
+    <figure id="filter">
+      <%= image_tag("", id:"thumbnail") %>
+    </figure>
   </span>
+
+  <div class="field">
+    <%= f.hidden_field :filter %>
+
+    <!-- モーダルウィンドウを呼び出すボタン -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">フィルターを選択</button>
+
+    <!-- モーダルウィンドウの中身 -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+          <!-- モーダルヘッダー -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">フィルター</h4>
+          </div>
+
+          <!-- モーダルボディー -->
+          <div class="modal-body">
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-normal">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Normal</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-1977">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>1977</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-aden">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Aden</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-amaro">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Amaro</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-ashby">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Ashby</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-brannan">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Brannan</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-brooklyn">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Brooklyn</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-charmes">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Charmes</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-clarendon">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Clarendon</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-crema">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Crema</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-dogpatch">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Dogpatch</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-earlybird">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Earlybird</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-gingham">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Gingham</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-ginza">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Ginza</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-hefe">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Hefe</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-helena">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Helena</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-hudson">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Hudson</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-inkwell">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Inkwell</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-kelvin">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Kelvin</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-juno">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Juno</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-lark">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Lark</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-lofi">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Lo-Fi</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-ludwig">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Ludwig</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-maven">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Maven</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-mayfair">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Mayfair</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-moon">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Moon</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-nashville">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Nashville</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-perpetua">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Perpetua</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-poprocket">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Poprocket</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-reyes">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Reyes</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-rise">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Rise</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-sierra">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Sierra</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-skyline">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Skyline</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-slumber">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Slumber</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-stinson">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Stinson</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-sutro">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Sutro</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-toaster">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Toaster</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-valencia">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Valencia</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-vesper">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Vesper</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-walden">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Walden</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-willow">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>Willow</p>
+            </div>
+
+            <div class="modal-img">
+              <div class="filter-wrapper">
+                <figure class="filter-xpro-ii">
+                  <%= image_tag("", class:"filter-img") %>
+                </figure>
+              </div>
+              <p>X-Pro II</p>
+            </div>
+          </div>
+
+          <!--モーダルフッター  -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="field">
     <%= f.text_area :content, placeholder: "キャプションを書く" %>
   </div>
 
   <div class="field">
+    位置情報
     <%= f.text_field :address, placeholder: "位置情報を追加" %>
   </div>
-
-  <div id="address"></div>
 
   <%= f.submit "投稿", class: "btn btn-primary btn-post" %>
 <% end %>
@@ -42,6 +451,7 @@
         $('#thumbnail').show();
         $('#micropost_address').show();
         $('.btn-post').show();
+        $('.filter-img').attr('src', reader.result );
       }
 
       // アップロードファイルからExif情報を抜出す。
@@ -72,7 +482,6 @@
             latlng = new google.maps.LatLng(lat, lng);
             geocoder.geocode({'latLng': latlng}, function(results, status) {
               if (status == google.maps.GeocoderStatus.OK) {
-                console.log(results[0].address_components);
 
                 // ジオコーディング結果を用いた処理
                 var geoCnt = results[0].address_components.length;
@@ -115,5 +524,27 @@
         }
       });
     }
+  });
+
+  // フィルター画像のマウスオーバー・アウト時に画像を透過
+  $('.filter-wrapper').on({
+    'mouseover': function(){
+      $(this).css('opacity', '0.7');
+    },
+    'mouseout': function(){
+      $(this).css('opacity', '1');
+    }
+  });
+
+  // フィルター画像選択時のカーソル表示(クリック)
+  $('.filter-wrapper').on('click', function(){
+    $('.filter-wrapper').css('border', '');
+    $(this).css('border', '3px solid #337ab7');
+
+    // プレビュー画像にフィルターを反映
+    var filterName = $(this).find('figure').attr('class');
+    $('#filter').removeClass();
+    $('#filter').addClass(filterName);
+    $('#micropost_filter').val(filterName);
   });
 </script>
