@@ -175,38 +175,46 @@ aside {
       input {
         display: none;
       }
+    }
+    #modal-button{
+      display: none;
+    }
+    .modal-header-wrapper-1{
+      margin-top: 10px;
+      display: flex;
       #filter{
         display: inline-block;
+        #thumbnail{
+          height: 300px;
+          display: none;
+        }
       }
-      #thumbnail{
-        height: 200px;
-        display: none;
-      }
-    }
-    .modal-img{
-      margin: 20px 4px;
-      display: inline-block;
-      .filter-wrapper{
-        border: 3px solid white;
-        cursor: pointer;
-        .filter-img{
+      .modal-header-wrapper-2{
+        flex: 1;
+        margin-left: 16px;
+        textarea {
           height: 200px;
         }
       }
-      p{
-        margin-top: 5px;
-        text-align: center;
+    }
+    .modal-body{
+      overflow: scroll;
+      display: flex;
+      .modal-img{
+        margin: 5px 5px 0px 5px;
+        display: inline-block;
+        .filter-wrapper{
+          border: 3px solid white;
+          cursor: pointer;
+          .filter-img{
+            height: 200px;
+          }
+        }
+        p{
+          margin-top: 5px;
+          text-align: center;
+        }
       }
-    }
-    textarea {
-      height: 100px;
-      margin-bottom: 5px;
-    }
-    #micropost_address{
-      // display: none;
-    }
-    .btn-post {
-      display: none;
     }
   }
 }
@@ -364,6 +372,7 @@ input {
 }
 
 /* microposts */
+
 .microposts {
   list-style: none;
   li[id^="micropost-"] {
