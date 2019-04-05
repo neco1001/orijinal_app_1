@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
 
   <span class="picture">
-    <%= f.label :picture, fa_icon("camera lg") + " 写真を選択", class: "btn btn-primary" %><br />
+    <%= f.label :picture, fa_icon("camera lg") + " 写真を選択", class: "btn btn-primary", id: "file-btn" %><br />
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
 
@@ -36,7 +36,7 @@
           <!-- モーダルボディー -->
           <div class="modal-body">
             <div class="modal-img">
-              <div class="filter-wrapper">
+              <div class="filter-wrapper filter-default">
                 <figure class="filter-normal">
                   <%= image_tag("", class:"filter-img") %>
                 </figure>
@@ -420,14 +420,20 @@
 <% end %>
 
 <script type="text/javascript">
-  $('#micropost_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
+  // ファイルサイズチェック(廃止)
+  // $('#micropost_picture').on('change', function() {
+  //   var size_in_megabytes = this.files[0].size/1024/1024;
+  //   if (size_in_megabytes > 5) {
+  //     alert('Maximum file size is 5MB. Please choose a smaller file.');
+  //   }
+  // });
+
+  // changeイベント前に値を初期化
+  $('#file-btn').click(function(){
+    $('#micropost_picture').val('');
   });
 
-  $('#micropost_picture').change(function(){
+  $('#micropost_picture').on('change', function(){
     if (this.files.length > 0) {
 
       // ①サムネイル画像への反映
@@ -440,13 +446,15 @@
 
       reader.onload = function() {
         $('#thumbnail').attr('src', reader.result );
-        $('#thumbnail').show();
-        $('#micropost_address').show();
-        $('.btn-post').show();
         $('.filter-img').attr('src', reader.result );
 
-        // フィルター選択画面を表示
+        // 新規投稿画面を表示
         $('#modal-button').click();
+        $('#filter').removeClass();
+        $('#micropost_content').val('');
+        $('#micropost_address').val('');
+        $('.filter-wrapper').css('border', '');
+        $('.filter-default').css('border', '3px solid #337ab7');
       }
 
       // ②位置情報の反映

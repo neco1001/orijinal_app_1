@@ -6,6 +6,7 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <span>投稿<%= @user.microposts.count %>件</span>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>
@@ -17,7 +18,9 @@
       <ol class="show-microposts">
         <% @microposts.each do |micropost| %>
           <li id="thumb-micropost-<%= micropost.id %>">
-            <%= image_tag micropost.picture.thumb.url if micropost.picture? %>
+            <figure class=<%= micropost.filter %> >
+              <%= image_tag micropost.picture.thumb.url %>
+            </figure>
           </li>
         <% end %>
       </ol>

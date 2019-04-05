@@ -2,10 +2,9 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <%= gravatar_for @user %>
-      <h1><%= @user.name %></h1>
-      <span><%= link_to "view my profile", @user %></span>
-      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+      <%= link_to gravatar_for(@user), @user %>
+      <h1><%= link_to @user.name, @user %></h1>
+      <span>投稿<%= @user.microposts.count %>件</span>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>

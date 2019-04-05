@@ -179,6 +179,9 @@ aside {
     #modal-button{
       display: none;
     }
+    .modal{
+      overflow-x: scroll;
+    }
     .modal-header-wrapper-1{
       margin-top: 10px;
       display: flex;
@@ -186,14 +189,18 @@ aside {
         display: inline-block;
         #thumbnail{
           height: 300px;
-          display: none;
+          width: 300px;
+          object-fit: cover;
         }
       }
       .modal-header-wrapper-2{
         flex: 1;
-        margin-left: 16px;
+        margin-left: 15px;
         textarea {
           height: 200px;
+        }
+        input{
+          outline: none;
         }
       }
     }
@@ -201,13 +208,15 @@ aside {
       overflow: scroll;
       display: flex;
       .modal-img{
-        margin: 5px 5px 0px 5px;
+        margin: 0px 12px 0px -3px;
         display: inline-block;
         .filter-wrapper{
           border: 3px solid white;
           cursor: pointer;
           .filter-img{
             height: 200px;
+            width: 200px;
+            object-fit: cover;
           }
         }
         p{
@@ -355,6 +364,9 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+    a{
+      color: #333333;
+    }
   }
 }
 
