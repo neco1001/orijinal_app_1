@@ -179,8 +179,8 @@ aside {
     #modal-button{
       display: none;
     }
-    .modal, .modal-open{
-      overflow: scroll;
+    .modal{
+      overflow: hidden;
     }
     .modal-header-wrapper-1{
       margin-top: 10px;
