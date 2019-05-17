@@ -7,3 +7,6 @@
 ![image](https://user-images.githubusercontent.com/46615152/57905218-bfdcb300-78b0-11e9-8abe-6365b18399ce.png)
 
 ## 機能一覧
+
+### ログイン機能
+メールアドレスとパスワードでログインします。Facebook IDでログインすることも可能です。
