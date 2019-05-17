@@ -2,6 +2,7 @@
 
 写真共有SNSは、インスタグラムを模倣して作成した写真共有アプリケーションです。  
 全41種類のフィルターで写真を簡単に加工できます。
+![Alt text](/public/IMG_9748jpg)
 
 [*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
 [Michael Hartl](http://www.michaelhartl.com/) 著
