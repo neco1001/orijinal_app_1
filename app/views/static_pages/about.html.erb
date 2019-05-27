@@ -1,10 +1,37 @@
 <% provide(:title, "写真共有SNSについて") %>
 <h1>写真共有SNSについて</h1>
 <p>
-  <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-  is a <a href="https://railstutorial.jp/#ebook">book</a> and
-  <a href="https://railstutorial.jp/#screencast">screencast</a>
-  to teach web development with
-  <a href="http://rubyonrails.org/">Ruby on Rails</a>.
-  This is the sample application for the tutorial.
+  写真共有SNSは、インスタグラムを模倣して作成した写真共有アプリケーションです。<br>
+  全41種類のフィルターで写真を簡単に加工して投稿できます。<br>
+
+  <h5><投稿画面サンプル></h5>
+  <%= image_tag("新規投稿.png", alt: "投稿画面サンプル") %><br>
+  <br>
+  <h3>【機能一覧】</h3>
+
+  <h5><ログイン機能></h5>
+  メールアドレスとパスワードでログインします。Facebook IDでログインすることも可能です。<br>
+  <br>
+  <h5><写真投稿機能></h5>
+  パソコンやスマートフォンに保存した写真をアップロードできます。画像を加工することも可能です。<br>
+  <br>
+  <h5>位置情報設定機能</h5>
+  写真のEXIF情報から位置情報を自動で設定します。<br>
+  <br>
+  <h5>フォロー機能</h5>
+  ユーザーをフォローすることにより、ホーム画面にフォローしたユーザーの投稿が表示されるようになります。<br>
+  <br>
+  <h5>いいね機能</h5>
+  いいね！ボタンを押すことで、気に入った投稿に「いいね」することができます。<br>
+  <br>
+  <h5>コメント機能</h5>
+  投稿にコメントをつけることができます。<br>
+  <br>
+  <h5>検索機能</h5>
+  ユーザーの一覧画面からユーザーを検索することができます。<br>
+  <br>
+  <h3>【使い方】</h3>
+  アカウント登録せずにご利用されたい場合は、以下のテストユーザーでログインしてください。<br>
+  メールアドレス：test_user_1@test.com<br>
+  パスワード：test_user_1
 </p>
