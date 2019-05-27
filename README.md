@@ -31,5 +31,5 @@
 
 ## 使い方
 以下のテストユーザーでログインすることができます。  
-メールアドレス：test_user_1@test.com
+メールアドレス：test_user_1@test.com  
 パスワード：test_user_1
